@@ -45,14 +45,22 @@ CREATE TABLE product
       ON UPDATE CASCADE
       ON DELETE CASCADE
 );
+CREATE TABLE ORDERID
+(
+   order_id INT NOT NULL AUTO_INCREMENT,
+   PRIMARY KEY(order_id)
+   
+);
 
 CREATE TABLE ORDERS
 (
-    order_id INT NOT NULL AUTO_INCREMENT,
+    order_id INT NOT NULL,
     user_id     INT,
     price        INT,
     orderDate    DATETIME,
-    PRIMARY KEY(order_id),
+    FOREIGN KEY(order_id) REFERENCES ORDERID(order_id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE,
     FOREIGN KEY(user_id) REFERENCES User_info(user_id)
        ON UPDATE CASCADE
        ON DELETE CASCADE 
