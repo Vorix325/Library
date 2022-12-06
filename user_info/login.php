@@ -1,32 +1,4 @@
-<!DOCTYPE html>   
-<html>   
-    <head>  
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>  
-        <title> Login Page </title>  
-    
-        <!-- Google Font link -->
-        <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-        rel="stylesheet" />
-
-        <!-- Stylesheet -->
-
-        <link rel="stylesheet" href="../bp-stylesheet.css" />
-
-       
-    </head>    
-  
-    <body>
-        
-
-        <!-- Header -->
-        <div class ="header">
-            <div class="inner-header">
-                <div class="logo-container">
-                    <h1>Budget<span>Buddy</span></h1>
-                </div>
-            </div>
-        </div>
+<?php include("../view/header.php"); ?>
 
         <div class="wrapper">
             <div class="container">
@@ -62,8 +34,7 @@
         </div>
         
         <!-- Footer -->
-        <?php include '../view/footer.php'; ?>
+<?php include '../view/footer.php'; ?>
           
             
-    </body>     
-</html>  
+  

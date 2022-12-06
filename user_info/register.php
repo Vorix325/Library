@@ -36,6 +36,14 @@
                     <label>Confirm Password</label>
                     <input type="password" placeholder="" id="confirm-password" name='confirm' required>
                     <br>
+                    <label>Type of User</label>
+                     
+                      <select name="type" class="select-category">
+         
+                            <option value="reg"  selected="selected">Reg</option>
+                            <option value="super" selected="selected">Super</option>
+                       </select>
+                    <br>
                     <button type="submit"class="submit" style="display: block; margin: 0 auto;"">Submit</button>
                     </form>
                     <p>By signing up, you agree to our <br>

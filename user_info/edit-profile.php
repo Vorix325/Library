@@ -47,8 +47,7 @@
                      <label>Phone:</label>
                      <input type="text" name="phone" value='<?php echo $phone; ?>'/>
                      <br> 
-                     <label>Nick Name:</label>
-                     <input type="text" name="lname" value='<?php echo $nick; ?>'/>
+                     
                      <br> 
                     <button type='submit' class="profile-submit">Update</button> 
                     </form>

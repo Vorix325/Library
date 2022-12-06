@@ -23,7 +23,7 @@
                 <!-- Welcome -->
                 <div class="welcome">
                     <h3>You've been logged out. Until next time Buddy!</h3><br>
-                    <p>To go back to budget <a href="/ex_starts/BudgetBuddy/BudgetBuddy/user_info">Login</a></p>
+                    <p>To go back to budget <a href="/ex_starts/Library/user_info">Login</a></p>
                 </div>
             </div>    
         </div>
