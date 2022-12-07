@@ -16,19 +16,35 @@
         </nav>
     </aside>
     <section>
+        
         <table border="1">
             <tr>
                 <th>Product Name</th><!-- comment -->
                 <th>Product Image</th>
-                <th>Price</th>
+                
                 <th>Quantity</th>
+                <th>Price</th><!-- comment -->
+                <th>Total</th>
                 <th>Add</th>
                 <th>Remove</th>
             </tr>
+            <?php $totalS = 0; ?>
             <?php foreach($cart as $item): ?>
             <tr>
-                <td><?php echo $item['']
-            </tr>
+                <td><?php 
+                         $product = $proudct_db->getProduct($item['product_id']); 
+                         echo $product->getName();
+                    ?></td>
+                <td></td>
+                <td><?php echo $item['quantity']; ?></td>
+                <td><?php $price = $product->getPrice(); 
+                          echo $price;                  
+                     ?></td><!-- comment -->
+                <td><?php $total = $price*$item['quantity']; 
+                          $totalS += $total; 
+                     ?></td>
+            </tr><!-- comment -->
+            <?php endforeach; ?>
         </table>
     </section>
 </main>
