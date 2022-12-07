@@ -49,7 +49,7 @@ CREATE TABLE ORDERID
 (
    order_id INT NOT NULL AUTO_INCREMENT,
    user_id     INT,
-   price        INT,
+   price        float(30),
    orderDate    DATETIME,
    PRIMARY KEY(order_id),
    FOREIGN KEY(user_id) REFERENCES User_info(user_id)
