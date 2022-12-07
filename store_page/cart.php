@@ -20,8 +20,7 @@
         <table border="1">
             <tr>
                 <th>Product Name</th><!-- comment -->
-                <th>Product Image</th>
-                
+                <th>Product Image</th>   
                 <th>Quantity</th>
                 <th>Price</th><!-- comment -->
                 <th>Total</th>

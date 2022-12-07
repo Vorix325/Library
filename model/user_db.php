@@ -86,6 +86,38 @@ class user_db
     $statement->closeCursor();
     return $user; 
   }
+  function getAll()
+  {
+    $db = database::getDB();
+    $query = 'SELECT * FROM user_info
+              '
+ 
+              ;
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $datas = $statement->fetchAll();
+    $users = [];
+      
+     foreach($datas as $data)
+     {
+      $user = new User();
+      $user->setID($data['user_id']);
+      $user->setFname($data['first_name']);
+      $user->setLname($data['last_name']);
+      $user->setUser($data['user_name']);
+      $user->setPhone($data['phone_number']);
+      $user->setEmail($data['email']);
+      $user->setType($data['typeof_user']);
+      $user->setPass($data['password']);
+      $users[] = $user;
+     }
+     
+    
+   
+        
+    $statement->closeCursor();
+    return $users; 
+  }
   function addUser($username,$password,$fname,$lname,$email,$phone,$type)
   {
     
