@@ -43,6 +43,14 @@
                 <td><?php $total = $price*$item['quantity']; 
                           $totalS += $total; 
                      ?></td>
+                <td><form action ='./index.php' method='post'>
+                        <input type ='hidden' name='action' value='addItem'><!-- comment -->
+                        <input type='button' value='+'>
+                </form></td>
+                <td><form action ='./index.php' method='post'>
+                        <input type ='hidden' name='action' value='deleteItem'><!-- comment -->
+                        <input type='button' value='-'>
+                </form></td>
             </tr><!-- comment -->
             <?php endforeach; ?>
         </table>
