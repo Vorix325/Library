@@ -1,6 +1,5 @@
 <?php
 
-include("../model/database.php");
 include("../model/user_db.php");
 
 $userInfo = new user_db();
@@ -82,8 +81,8 @@ switch($action)
             
         }
         break;
-  case 'show_profile':
-       $id = $userInfo->getCurrent();
+   case 'show_pro':
+        $id = $userInfo->getCurrent();
         $info = $userInfo->getUserInfo($id[0]);
         if($info == null || $info == false)
         {

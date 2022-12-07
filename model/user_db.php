@@ -59,15 +59,7 @@ class user_db
     $statement->execute();
     $datas = $statement->fetchAll();
     $user = new User();
-    if($datas == null)
-    {
-            $error = "Please select 2 exactly product for compare";
-            header('Location: http://localhost/ex_starts/BudgetBuddy/BudgetBuddy/errors/error.php');
-            
-    }
-     else 
-    {
-      
+    
      foreach($datas as $data)
      {
       $user->setID($data['user_id']);
@@ -80,7 +72,7 @@ class user_db
       $user->setPass($data['password']);
      }
      
-    }
+    
    
         
     $statement->closeCursor();
