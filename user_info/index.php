@@ -15,7 +15,7 @@ if ($action == NULL) {
 
 switch($action)
 {
-  case 'showLogin':
+  case 'show_login':
     include('../user_info/login.php');
     break;
   case 'login':

@@ -1,5 +1,6 @@
 <?php
 require("../model/user.php");
+require("../model/database.php");
 class user_db
 {
     function checkLogin($username)
@@ -85,5 +86,46 @@ class user_db
     $statement->closeCursor();
     return $user; 
   }
+  function addUser($username,$password,$fname,$lname,$email,$phone,$type)
+  {
+    
+    $db = database::getDB();
+    $query = 'INSERT INTO users_bbudget
+                (user_name, first_name, last_name, email, phone_number, typeof_user, password)
+               VALUES
+                 (:username,:fname,     :lname,    :email, :phone, :type, :password)';
+            
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username',$username);
+    $statement->bindValue(':password',$password);
+    $statement->bindValue(':fname',$fname);
+    $statement->bindValue(':lname',$lname);
+    $statement->bindValue(':email',$email);
+    $statement->bindValue(':phone',$phone);
+    $statement->bindValue(':type', $type);
+    $statement->execute();
+    $statement->closeCursor(); 
+  }
+  function updateUser($id, $username,$password,$fname,$lname,$email,$phone, $type)
+   {
+    $db = database::getDB();
+    $query = 'UPDATE users_bbudget
+              SET 
+              user_name = :username, first_name = :fname, last_name = :lname , email = :email, phone_number = :phone, typeof_user = :type, password = :password
+              WHERE 
+              user_id = :id'
+               ;
+    $statement = $db->prepare($query);
+    $statement->bindValue(':id', $id);
+    $statement->bindValue(':username',$username);
+    $statement->bindValue(':password',$password);
+    $statement->bindValue(':fname',$fname);
+    $statement->bindValue(':lname',$lname);
+    $statement->bindValue(':email',$email);
+    $statement->bindValue(':phone',$phone);
+    $statement->bindValue(':type', $type);
+    $statement->execute();
+    $statement->closeCursor();
+   }
 }
 
