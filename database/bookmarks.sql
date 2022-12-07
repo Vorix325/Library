@@ -71,7 +71,17 @@ CREATE TABLE ORDERS
     
 );
 
-
+create Table Cart
+(
+    user_id INT,
+    product_id INT,
+    FOREIGN KEY(user_id) REFERENCES User_info(user_id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE, 
+    FOREIGN KEY(product_id) REFERENCES product(product_id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE 
+);
 
 
 
