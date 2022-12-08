@@ -33,7 +33,7 @@
                                                                   
                                                                   <td><?php echo $o->getId(); ?></td>
                                                                   <td><?php echo $o->getName(); ?></td>
-                                                                  <td></td>
+                                                                  <td><?php $o->getImageFilename(); ?></td>
                                                                   <td><?php echo $o->getPrice(); ?></td>
                                                                   <td><?php echo $quantity[$s]; ?></td>
                                                                   <?php $s++; ?>

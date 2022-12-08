@@ -1,20 +1,6 @@
 <?php include '../view/header.php'; ?>
 <main>
-    <aside>
-        <h1>Categories</h1>
-        <nav>
-        <ul>
-            <!-- display links for all categories -->
-            <?php foreach($categories as $category) : ?>
-            <li>
-                <a href="?category_id=<?php echo $category->getID(); ?>">
-                    <?php echo $category->getName(); ?>
-                </a>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-        </nav>
-    </aside>
+  
     <section>
         
         <table border="1">
@@ -33,7 +19,7 @@
                          $product = $proudct_db->getProduct($item['product_id']); 
                          echo $product->getName();
                     ?></td>
-                <td></td>
+                <td><?php $item->getImageFilename(); ?></td>
                 <td><?php echo $item['quantity']; ?></td>
                 <td><?php $price = $product->getPrice(); 
                           echo $price;                  
@@ -45,6 +31,13 @@
                 </form></td>
             </tr><!-- comment -->
             <?php endforeach; ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><?php echo $totalS; ?></td>
+            </tr>
         </table>
     </section>
 </main>

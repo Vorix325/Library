@@ -55,7 +55,10 @@ class product
     {
         $this->ca_id = $ca_id;
     }
-    
+    public function getImageFilename() {
+        $image_filename = $this->id . '.png';
+        return $image_filename;
+    }
 }
 
 
