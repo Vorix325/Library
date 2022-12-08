@@ -7,7 +7,7 @@ include('../model/cart.php');
 $userInfo = new user_db();
 $product_db = new product_db ();
 $order_db = new order_db();
-$cart = new cart();
+$carts = new cart();
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -19,6 +19,7 @@ if ($action == NULL) {
 switch($action)
 {
     case 'show_cart':
+        $cart = $carts->getCart();
         break;
     case 'addOrder':
         $date = new DateTime();
@@ -37,6 +38,8 @@ switch($action)
         $cart->deleteCart();
         
         break;
+    
+        
 }
 
 

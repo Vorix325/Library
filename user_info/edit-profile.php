@@ -22,7 +22,7 @@
             <div class="container">
                 <!-- Welcome -->
                 <div class="welcome">
-                    <h3>Hey <?php echo $username;?>, edit your profile here.</h3>
+                    <h3>Hey <?php echo $userName;?>, edit your profile here.</h3>
                 </div>
                 <div class="info-container">
                     <h3>Profile</h3>
@@ -30,10 +30,10 @@
                       <input type='hidden' name='action'  value='editUser'>
                       <input type='hidden' name='userId'  value='<?php echo $userId; ?>'>
                      <label>User Name:</label>
-                     <input type="text" name="username" value='<?php echo $username; ?>'/>
+                     <input type="text" name="username" value='<?php echo $userName; ?>'/>
                      <br>
                      <label>Password:</label>
-                     <input type="text" name="password" value='<?php echo $password; ?>'/>
+                     <input type="text" name="password" value='<?php echo $pass; ?>'/>
                      <br> 
                      <label>First Name:</label>
                      <input type="text" name="fname" value='<?php echo $fname; ?>'/>

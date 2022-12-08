@@ -18,8 +18,8 @@ switch($action)
     include('../user_info/login.php');
     break;
   case 'login':
-      $userName = filter_input(INPUT_POST, 'userName');
-      $pass = trim(filter_input(INPUT_POST, 'pass'));
+      $userName = filter_input(INPUT_POST, 'username');
+      $pass = trim(filter_input(INPUT_POST, 'password'));
       $checkCall = $userInfo->checkLogin($userName);
         
       $check = password_hash($checkCall[0], PASSWORD_DEFAULT);
@@ -30,13 +30,13 @@ switch($action)
             if($user == null)
             {
                 
-                include('../errors/test.php');
+                include('../errors/error.php');
             }
             else 
             {
                 $userInfo->updateCurrent($user[0], $user[1]);
                 
-                header("Location: ../index.php");
+                //header("Location: ../index.php");
             }
             
             break;
@@ -58,8 +58,8 @@ switch($action)
         include('../user_info/register.php');
         break;
    case 'register':
-        $userName = filter_input(INPUT_POST, 'userName');
-        $pass = filter_input(INPUT_POST, 'pass');
+        $userName = filter_input(INPUT_POST, 'username');
+        $pass = filter_input(INPUT_POST, 'password');
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $fname = filter_input(INPUT_POST, 'fname');
         $lname = filter_input(INPUT_POST, 'lname');
@@ -70,14 +70,14 @@ switch($action)
         
         if($pass == $confirm)
         {
-            $userInfo->addUser($userName, $pass, $fname, $lname, $email, $phone);
+            $userInfo->addUser($userName, $pass, $fname, $lname, $email, $phone, $type);
             header("Location: ../index.php");
         }
         else
         {
             $errorName = "Wrong password";
             $error = 'Please match the password';
-            include('../errors/error/php');
+            include('../errors/error.php');
             
         }
         break;
@@ -103,7 +103,7 @@ switch($action)
         include('../user_info/edit-profile.php');
         break;
   case 'editProfile':
-       $userId= filter_input(INPUT_POST, 'userId');
+        $userId= filter_input(INPUT_POST, 'userId');
         $userName = filter_input(INPUT_POST, 'userName');
         $pass = filter_input(INPUT_POST, 'pass');
         $email = filter_input(INPUT_POST, 'email');

@@ -3,7 +3,7 @@ require("../model/user.php");
 require("../model/database.php");
 class user_db
 {
-    function checkLogin($username)
+  function checkLogin($username)
  {
     $db = database::getDB();
     $query = 'SELECT password FROM user_info
@@ -18,7 +18,7 @@ class user_db
  function updateCurrent($userId, $type)
  {
     $db = database::getDB();
-    $query = 'UPDATE currentQ SET user_id = :userId, typeof_user = :type WHERE queue = 1';   
+    $query = 'UPDATE currents SET user_id = :userId, typeof_user = :type WHERE queue = 1';   
     $statement = $db->prepare($query);
     $statement->bindValue(':userId', $userId);
     $statement->bindValue(':type',$type);
@@ -29,7 +29,7 @@ class user_db
  function getCurrent()
  {
     $db = database::getDB();
-    $sql = "SELECT user_id FROM currentq WHERE queue = 1;";  
+    $sql = "SELECT user_id FROM currentS WHERE queue = 1;";  
     $statement = $db->prepare($sql);
     $statement->execute();
     $userId = $statement->fetch();
@@ -39,7 +39,7 @@ class user_db
  function getCurrentType()
  {
     $db = database::getDB();
-    $sql = "SELECT typeof_user FROM currentq WHERE queue = 1;";  
+    $sql = "SELECT typeof_user FROM currentS WHERE queue = 1;";  
     $statement = $db->prepare($sql);
     $statement->execute();
     $userId = $statement->fetch();
@@ -114,7 +114,7 @@ class user_db
   {
     
     $db = database::getDB();
-    $query = 'INSERT INTO users_bbudget
+    $query = 'INSERT INTO user_info
                 (user_name, first_name, last_name, email, phone_number, typeof_user, password)
                VALUES
                  (:username,:fname,     :lname,    :email, :phone, :type, :password)';
@@ -133,7 +133,7 @@ class user_db
   function updateUser($id, $username,$password,$fname,$lname,$email,$phone, $type)
    {
     $db = database::getDB();
-    $query = 'UPDATE users_bbudget
+    $query = 'UPDATE user_info
               SET 
               user_name = :username, first_name = :fname, last_name = :lname , email = :email, phone_number = :phone, typeof_user = :type, password = :password
               WHERE 
@@ -151,5 +151,20 @@ class user_db
     $statement->execute();
     $statement->closeCursor();
    }
+   
+   function getUserID($username)
+ {
+    $db = database::getDB();
+    $query = 'SELECT user_id, typeof_user FROM user_info
+              WHERE user_name = :username'
+ 
+              ;
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username',$username);
+    $statement->execute();
+    $user = $statement->fetch();
+    $statement->closeCursor();
+    return $user; 
+  }
 }
 

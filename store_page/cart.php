@@ -24,8 +24,7 @@
                 <th>Quantity</th>
                 <th>Price</th><!-- comment -->
                 <th>Total</th>
-                <th>Add</th>
-                <th>Remove</th>
+                
             </tr>
             <?php $totalS = 0; ?>
             <?php foreach($cart as $item): ?>
@@ -42,13 +41,7 @@
                 <td><?php $total = $price*$item['quantity']; 
                           $totalS += $total; 
                      ?></td>
-                <td><form action ='./index.php' method='post'>
-                        <input type ='hidden' name='action' value='addItem'><!-- comment -->
-                        <input type='button' value='+'>
-                </form></td>
-                <td><form action ='./index.php' method='post'>
-                        <input type ='hidden' name='action' value='deleteItem'><!-- comment -->
-                        <input type='button' value='-'>
+        
                 </form></td>
             </tr><!-- comment -->
             <?php endforeach; ?>

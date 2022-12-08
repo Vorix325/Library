@@ -50,7 +50,7 @@ class order_db
     function getItem($orderId)
     {
         $db = database::getDB();
-        $query = 'SELECT product_id FROM ORDERID
+        $query = 'SELECT * FROM ORDERID
                   WHERE order_id = :id';
             
         $statement = $db->prepare($query);
