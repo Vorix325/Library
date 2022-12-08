@@ -1,8 +1,10 @@
 <?php 
-require("../model/database.php");
 
-function get_categories()
+class categoryDB
 {
+
+ function get_categories()
+ {
     $db = database::getDB();
     $query = 'SELECT * FROM category
             ORDER BY category_id';
@@ -11,9 +13,10 @@ function get_categories()
     $stm->execute();
     $categories = $stm->fetchAll();
     return $categories;
-}
+ }
 
-function get_category_name($category_id){
+ function get_category_name($category_id)
+ {
     $db = database::getDB();
     $query = 'SELECT * FROM category
               WHERE category_id = :category_id';
@@ -23,8 +26,9 @@ function get_category_name($category_id){
         $stm->execute();
         $category = $stm->fetch();
         $category_name = $category['category_name'];
-        include('../errors/error.php');
         $stm->closeCursor();
-        //return $category_name;
+        return $category_name;
         
+ } 
+
 }

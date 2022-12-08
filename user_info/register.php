@@ -46,9 +46,8 @@
                     <br>
                     <button type="submit"class="submit" style="display: block; margin: 0 auto;"">Submit</button>
                     </form>
-                    <p>By signing up, you agree to our <br>
-                    <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
-                    <p>Already have an account? <a href="../user_info/login.php">Login</a></p>
+                  
+                    <p>Already have an account? <a href="../user_info/index.php">Login</a></p>
                     
                 </div>
             </div>
