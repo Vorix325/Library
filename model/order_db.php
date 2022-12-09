@@ -23,7 +23,7 @@ class order_db
     function getOrder($userId, $time)
     {
         $db = database::getDB();
-        $query = 'SELECT order_id FROM ORDERID WHERE user_id = :id, orderDate = :time';
+        $query = 'SELECT order_id FROM ORDERID WHERE  user_id= :id AND orderDate = :time';
             
         $statement = $db->prepare($query);
         $statement->bindValue(':id',$userId);
@@ -33,17 +33,18 @@ class order_db
         $statement->closeCursor();
         return $data;
     }
-    function addItem($orderId,$item)
+    function addItem($orderId,$item,$quan)
     {
          $db = database::getDB();
         $query = 'INSERT INTO ORDERS
-                (order_id,product_id)
+                (order_id,product_id,quantity)
                VALUES
-                 (:id, :item)';
+                 (:id, :item,:quan)';
             
         $statement = $db->prepare($query);
         $statement->bindValue(':id',$orderId);
-        $statement->bindValue(':product_id',$item);
+        $statement->bindValue(':item',$item);
+        $statement->bindValue(':quan',$quan);
         $statement->execute();
         $statement->closeCursor();
     }

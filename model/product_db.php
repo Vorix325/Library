@@ -79,17 +79,9 @@ function add_product($category_id, $name, $price) {
           $statement->bindValue(':id',$product_id);
           $statement->execute();
           $products= $statement->fetch();
-          $product = new product();
-          foreach($products as $p)
-        {
-            $product->setId($p['product_id']);
-            $product->setName($p['product_name']);
-            $product->setCaId($p['category_id']);
-            $product->setPrice($p['price']);
-            
-        }
+
            $statement->closeCursor();
-           return $product; 
+           return $products; 
     }
     
     

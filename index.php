@@ -16,14 +16,16 @@
         
 <?php include 'view/header.php'; ?>
 <main>
+    <div class="about-container">
     <h1>Menu</h1>
     <ul>
         <li>
             <a href="store_manager">Product Manager</a>
         </li>
         <li>
-            <a href="product_catalog">Product Catalog</a>
+            <a href="store_page">Product Catalog</a>
         </li>
     </ul>
+    </div>
 </main>
 <?php include 'view/footer.php'; ?>

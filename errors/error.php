@@ -2,7 +2,7 @@
 <div id="main">
     <h1 class="top">Test</h1>
     <p>
-        <?php echo $userName ?> 
+        <?php print_r($quan) ?> 
         
         
     </p>

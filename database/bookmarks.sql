@@ -72,7 +72,7 @@ CREATE TABLE ORDERS
     
 );
 
-create Table Cart
+create Table CART
 (
     user_id INT,
     product_id INT,

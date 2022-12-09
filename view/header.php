@@ -48,6 +48,7 @@
                     if($type != null) : ?>
                     <a href= '/Library-main/user_info/index.php?action=show_pro'><li>Profile</li></a>
                    <a href= '/Library-main/store_page/index.php?action=show_cart'><li>Cart</li></a>
+                   <a href= '/Library-main/user_info/index.php?action=logout'><li>Logout</li></a>
                     <?php endif; ?>
                     <?php
                      if($type == "super") : ?>

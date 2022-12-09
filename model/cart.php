@@ -15,7 +15,7 @@ class cart
     function getQuantity($userId,$item)
     {
         $db = database::getDB();
-        $query = 'SELECT quantity FROM CART WHERE user_id=:user, product_id=:product';
+        $query = 'SELECT quantity FROM CART WHERE user_id=:user AND product_id=:product';
             
         $statement = $db->prepare($query);
         $statement->bindValue(':user',$userId);
@@ -35,7 +35,7 @@ class cart
             
         $statement = $db->prepare($query);
         $statement->bindValue(':id',$userId);
-        $statement->bindValue(':product_id',$item);
+        $statement->bindValue(':item',$item);
         $statement->bindValue(':quan',$quan);
         $statement->execute();
         $statement->closeCursor();
@@ -43,14 +43,14 @@ class cart
     function updateCart($userId, $item, $quan)
     {
         $db = database::getDB();
-        $query = 'UPDATE  CART
+        $query = 'UPDATE CART
                   SET
                   user_id = :id, quantity = :quan
                   WHERE product_id = :item';
             
         $statement = $db->prepare($query);
         $statement->bindValue(':id',$userId);
-        $statement->bindValue(':product_id',$item);
+        $statement->bindValue(':item',$item);
         $statement->bindValue(':quan',$quan);
         $statement->execute();
         $statement->closeCursor();
@@ -58,7 +58,7 @@ class cart
     function deleteCart()
     {
         $db = database::getDB();
-        $query = 'DELETE * FROM CART';
+        $query = 'DELETE FROM CART';
             
         $statement = $db->prepare($query);
         $statement->execute();

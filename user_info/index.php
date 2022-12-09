@@ -48,12 +48,7 @@ switch($action)
             include('../errors/error.php');
             break;
         }
-   case 'logout':
-        $x = null;
-        $y = null;
-        $userInfo->updateCurrent($x,$y);
-        include('../user_info/logout.php');
-        break;
+ 
    case 'show_reg':
         include('../user_info/register.php');
         break;
@@ -112,12 +107,12 @@ switch($action)
         $phone = filter_input(INPUT_POST, 'phone');
         $type = filter_input(INPUT_POST, 'type');
         $userInfo->updateUser($userId,$userName,$pass, $fname, $lname, $email,$phone, $type);
-        header("Location: ./index.php?action=show_pro");;
+        header("Location: ./index.php?action=show_pro");
         break;
   case 'logout':
        $x = null;
        $y = null;
        $userInfo->updateCurrent($x,$y);
-       include('../index.php');
+        header("Location: ../index.php");
        break;
 }

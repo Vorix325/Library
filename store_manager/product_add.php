@@ -3,7 +3,7 @@
     <h1>Add Product</h1>
     <form action="." method="post" id="add_product_form">
         <input type="hidden" name="action" value="add_product">
-
+         <div class="category-container">
         <label>Category:</label>
         <select name="category_id">
         <?php foreach ( $categories as $category ) : ?>
@@ -30,5 +30,6 @@
     <p class="last_paragraph">
         <a href="?action=list_products">View Product List</a>
     </p>
+    </div>
 
 </main>

@@ -18,14 +18,13 @@
             <?php foreach($cart as $item): ?>
             <tr>
                 <td><?php 
-                         $product = $proudct_db->getProduct($item['product_id']); 
-                         echo $product->getName();
+                         $product = $productDB->getProduct($item['product_id']); 
+                         echo $product['product_name'];
                     ?></td>
-                <td><?php $item->getImageFilename(); ?></td>
+                <td></td>
                 <td><?php echo $item['quantity']; ?></td>
-                <td><?php $price = $product->getPrice(); 
-                          echo $price;                  
-                     ?></td><!-- comment -->
+                <td><?php echo $product['price']; ?>                
+                     </td><!-- comment -->
                 <td><form action="./index.php" method="post">
                       <input type='hidden' name='userId' value='<?php echo $item['user_id'];?>'>
                       <input type='hidden' name='productId' value='<?php echo $item['product_id'];?>'><!-- comment -->
@@ -40,8 +39,9 @@
                       <input type ='hidden' name='action' value='addCart'>
                       <input type='submit' value='-'>
                  </form></td>
-                <td><?php $total = $price*$item['quantity']; 
+                <td><?php $total = $product['price']*$item['quantity']; 
                           $totalS += $total; 
+                          echo $total;
                      ?></td>
         
                 

@@ -1,5 +1,6 @@
 <?php include '../view/header.php'; ?>
 <main>
+      <div class="category-container">
     <h1>Update</h1>
 <form action="." method="post" id="add_product_form">
         <input type="hidden" name="action" value="update_the_form">
@@ -30,6 +31,6 @@
         <label>&nbsp;</label>
         <input type="submit" value="update Product" />
         <br>
-
+        </div>
         </main>
         </form>
