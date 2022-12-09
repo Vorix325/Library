@@ -13,15 +13,13 @@ function get_categories(){
 function get_category_name($category_id){
     global $db;
     $query = 'SELECT * FROM category
-              WHERE category_id = :category_id';
+            WHERE category_id = :category_id';
 
         $stm = $db->prepare($query);
         $stm->bindValue(':category_id', $category_id);
         $stm->execute();
         $category = $stm->fetch();
-        $category_name = $category['category_name'];
-        include('../error/error.php');
         $stm->closeCursor();
+        $category_name = $category['category_name'];
         return $category_name;
-        
 }
