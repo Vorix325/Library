@@ -20,7 +20,7 @@
                     <a href= '/Library-main/user_info/index.php?action=show_login'><li>Login</li></a>
                     <a href= '/Library-main/user_info/index.php?action=show_reg'><li>Register</li></a>
                     <a href= '/Library-main/user_info/index.php?action=show_pro'><li>Profile</li></a>
-                   
+                   <a href= '/Library-main/store_page/index.php?action=show_cart'><li>Cart</li></a>
                    <a href= '/Library-main/admin/index.php?action=show_user'><li>Show All user</li></a>
                    <a href= '/Library-main/admin/index.php?action=show_order'><li>Show All Order</li></a>
                      

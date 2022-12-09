@@ -20,22 +20,15 @@ switch($action)
 {
     case 'show_cart':
         $cart = $carts->getCart();
+        include('../store_page/cart.php');
         break;
     case 'addCart':
         $userId = filter_input(INPUT_POST, 'userId');
         $item = filter_input(INPUT_POST, 'productId');
         $quan = $carts->getQuantity($userId, $productId);
-        if($quan == null)
-        {
-            $quant = 1;
-            $carts->addCart($userId, $item, $quan);
-        }
-        else 
-        {
-            $quant = $quan[0];
-            $quan += 1;
-            $carts->updateCart($userId, $item, $quan);
-        }
+        $amount = filter_input(INPUT_POST, 'amount');
+        changeCart($userId, $item, $quan, $amount, $carts);
+        header('Location:.?action=show_cart');
         break;
         
     case 'addOrder':
@@ -57,6 +50,22 @@ switch($action)
         break;
     
         
+}
+
+
+function changeCart($userId,$item,$quan,$amount,$carts)
+{
+    if($quan == null)
+        {
+            $quant = 1;
+            $carts->addCart($userId, $item, $quan);
+        }
+        else 
+        {
+            $quant = $quan[0];
+            $quan += $amount;
+            $carts->updateCart($userId, $item, $quan);
+        }
 }
 
 
