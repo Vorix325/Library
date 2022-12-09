@@ -104,14 +104,14 @@ switch($action)
         break;
   case 'editProfile':
         $userId= filter_input(INPUT_POST, 'userId');
-        $userName = filter_input(INPUT_POST, 'userName');
-        $pass = filter_input(INPUT_POST, 'pass');
+        $userName = filter_input(INPUT_POST, 'username');
+        $pass = filter_input(INPUT_POST, 'password');
         $email = filter_input(INPUT_POST, 'email');
         $fname = filter_input(INPUT_POST, 'fname');
         $lname = filter_input(INPUT_POST, 'lname');
         $phone = filter_input(INPUT_POST, 'phone');
         $type = filter_input(INPUT_POST, 'type');
         $userInfo->updateUser($userId,$userName,$pass, $fname, $lname, $email,$phone, $type);
-        header('Location: .?action=show_profile');
+        header("Location: ./index.php?action=show_pro");;
         break;
 }

@@ -34,7 +34,7 @@ switch($action)
         $error = "Missing or incorrect product id or category id.";
         include('../errors/error.php');
       } else { 
-        $categoryDB->delete_product($product_id);
+        $productDB->delete_product($product_id);
         header("Location: .?category_id=$category_id");
       }
       break;
@@ -47,61 +47,52 @@ switch($action)
             FILTER_VALIDATE_INT);
          $name = filter_input(INPUT_POST, 'name');
          $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
-         if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
+         if ($category_id == NULL || $category_id == FALSE || 
             $name == NULL || $price == NULL || $price == FALSE) {
          $error = "Invalid product data. Check all fields and try again.";
          include('../errors/error.php');
         } else { 
-           $categoryDB->add_product($category_id,$name, $price);
+           $productDB->add_product($category_id,$name, $price);
            header("Location: .?category_id=$category_id");
         }
         break;
-        
-}
-
-
-
-
-
-
-
-
-/*
-else if ($action == 'show_update_product') {
-    $product_id = filter_input(INPUT_GET, 'product_id', 
+    case 'show_update_product':
+         $product_id = filter_input(INPUT_GET, 'product_id', 
             FILTER_VALIDATE_INT);
     if ($product_id == NULL || $product_id == FALSE) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else {
-        $categories = get_categories();
-        $product = get_product($product_id);
+        $categories = $categoryDB->get_categories();
+        $product = $productDB->get_product($product_id);
         $category_id = $product['category_id'];
         $name = $product['product_name'];
         $price = $product['price'];
-        include('update.php');
+        include('../store_manager/update.php');
     } 
-}
-
-else if ($action == 'update_the_form') {
-    $product_id = filter_input(INPUT_POST, 'product_id', 
+    break;
+    case 'update_the_form':       
+     $product_id = filter_input(INPUT_POST, 'product_id', 
     FILTER_VALIDATE_INT);
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     $name = filter_input(INPUT_POST, 'name');
     $price = filter_input(INPUT_POST, 'price',);
-    if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
+    if ($category_id == NULL || $category_id == FALSE  || 
             $name == NULL || $price == NULL || $price == FALSE) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else { 
-        update_the_form($product_id,$category_id,$name, $price);
+        $productDB->update_the_form($product_id,$category_id,$name, $price);
         header("Location: .?category_id=$category_id");
-        include('update.php');
+        include('../store_manager/update.php');
     }
-
-
-
+    break;
 }
-*/
-?>
+
+
+
+
+
+
+

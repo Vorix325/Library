@@ -40,8 +40,6 @@ function delete_product($product_id) {
 }
 
 
-
-
 function update_the_form($product_id,$category_id, $name, $price) {
     $db = database::getDB();
     $query = "UPDATE product

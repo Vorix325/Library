@@ -27,7 +27,7 @@
                 <div class="info-container">
                     <h3>Profile</h3>
                     <form action='./index.php' method="post">
-                      <input type='hidden' name='action'  value='editUser'>
+                      <input type='hidden' name='action'  value='editProfile'>
                       <input type='hidden' name='userId'  value='<?php echo $userId; ?>'>
                      <label>User Name:</label>
                      <input type="text" name="username" value='<?php echo $userName; ?>'/>
@@ -47,7 +47,13 @@
                      <label>Phone:</label>
                      <input type="text" name="phone" value='<?php echo $phone; ?>'/>
                      <br> 
+                     <label>Type of User</label>
                      
+                      <select name="type" class="select-category">
+         
+                            <option value="reg"  selected="selected">Reg</option>
+                            <option value="super" selected="selected">Super</option>
+                       </select>
                      <br> 
                     <button type='submit' class="profile-submit">Update</button> 
                     </form>
