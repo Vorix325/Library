@@ -114,4 +114,10 @@ switch($action)
         $userInfo->updateUser($userId,$userName,$pass, $fname, $lname, $email,$phone, $type);
         header("Location: ./index.php?action=show_pro");;
         break;
+  case 'logout':
+       $x = null;
+       $y = null;
+       $userInfo->updateCurrent($x,$y);
+       include('../index.php');
+       break;
 }

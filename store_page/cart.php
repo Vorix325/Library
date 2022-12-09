@@ -57,6 +57,11 @@
                 <td><?php echo $totalS; ?></td>
             </tr>
         </table>
+            <form action="./index.php" method="post">
+             <input type ='hidden' name='action' value='addOrder'>
+             <input type ='hidden' name='total' value='<?php echo $totalS; ?>'>
+            <button type="submit" class="profile-submit">Purchase</button>
+            </form>
         </div>
     </section>
 </main>

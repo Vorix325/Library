@@ -46,7 +46,7 @@ switch($action)
         }
         
         $cart->deleteCart();
-        
+        header('Location:../index.php');
         break;
     
         
