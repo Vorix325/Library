@@ -1,3 +1,4 @@
+<?php include '../view/header.php'; ?>
 <main>
     <h1>Add Product</h1>
     <form action="." method="post" id="add_product_form">
