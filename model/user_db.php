@@ -1,6 +1,6 @@
 <?php
 require("../model/user.php");
-require("../model/database.php");
+
 class user_db
 {
   function checkLogin($username)

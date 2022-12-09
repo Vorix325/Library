@@ -2,10 +2,6 @@
     <h1>Update</h1>
 <form action="." method="post" id="add_product_form">
         <input type="hidden" name="action" value="update_the_form">
-
-    
-        
-        
         
         <label>Category:</label>
         <select name="category_id">

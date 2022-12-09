@@ -1,5 +1,5 @@
 <?php
-
+require("../model/database.php");
 include("../model/user_db.php");
 include("../model/product_db.php");
 include('../model/cart.php');
@@ -21,6 +21,23 @@ switch($action)
     case 'show_cart':
         $cart = $carts->getCart();
         break;
+    case 'addCart':
+        $userId = filter_input(INPUT_POST, 'userId');
+        $item = filter_input(INPUT_POST, 'productId');
+        $quan = $carts->getQuantity($userId, $productId);
+        if($quan == null)
+        {
+            $quant = 1;
+            $carts->addCart($userId, $item, $quan);
+        }
+        else 
+        {
+            $quant = $quan[0];
+            $quan += 1;
+            $carts->updateCart($userId, $item, $quan);
+        }
+        break;
+        
     case 'addOrder':
         $date = new DateTime();
         $user = $userInfo->getCurrent();

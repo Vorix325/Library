@@ -1,6 +1,6 @@
 <?php
 
-
+require("../model/database.php");
 include("../model/user_db.php");
 include("../model/order_db.php");
 include("../model/product_db.php");

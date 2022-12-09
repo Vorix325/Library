@@ -1,5 +1,5 @@
 <?php
-
+require("../model/database.php");
 include("../model/user_db.php");
 
 $userInfo = new user_db();
@@ -36,7 +36,7 @@ switch($action)
             {
                 $userInfo->updateCurrent($user[0], $user[1]);
                 
-                //header("Location: ../index.php");
+                header("Location: ../index.php");
             }
             
             break;

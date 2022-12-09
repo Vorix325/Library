@@ -1,7 +1,7 @@
 <?php
 
 require("../model/order.php");
-require("../model/database.php");
+
 
 class order_db
 {
