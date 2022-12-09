@@ -95,6 +95,17 @@ INSERT INTO User_INFO VALUES
 ('testUser','JK','LSO','budgetbuddy75@gmail.com','135-246-9825','reg','1234',0),
  ('testAdmin','AD','STK','budgetbuddy75@gmail.com','569-234-1235','super','abcd',1);
 
+INSERT INTO `category` (`category_name`, `category_id`) VALUES
+('Action', 1),
+('adventure ', 2),
+('Web application books', 3);
+
+INSERT INTO `product` (`product_id`, `product_name`, `category_id`, `price`) VALUES
+(1, 'HTML&CSS', 3, NULL),
+(2, 'Hobbit', 2, NULL),
+(3, 'Lord of the Rings', 1, NULL);
+
+
 -- create the users
 CREATE USER IF NOT EXISTS mgs_user@localhost 
 IDENTIFIED BY 'pa55word';
