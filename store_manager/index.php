@@ -88,6 +88,11 @@ switch($action)
         include('../store_manager/update.php');
     }
     break;
+    case 'addCategory':
+    $name = filter_input(INPUT_POST, 'name');
+    $categoryDB->add_category($name);
+    header("Location: .index.php");
+    break;
 }
 
 

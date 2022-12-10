@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>   
 <html>   
     <head>  
@@ -19,12 +20,15 @@
     <div class="about-container">
     <h1>Menu</h1>
     <ul>
+         <?php if($type == 'super'): ?>
         <li>
             <a href="store_manager">Product Manager</a>
         </li>
+       <?php endif; ?>
         <li>
             <a href="store_page">Product Catalog</a>
         </li>
+        
     </ul>
     </div>
 </main>

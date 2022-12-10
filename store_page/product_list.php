@@ -9,26 +9,26 @@
     <aside>
         <h1>Categories</h1>
         <nav>
-         <ul class="navigation">
-    <?php foreach($categories as $category): ?>
-        <li>
-            <h5>
+       <div class="about-container">
+         <ul>
+          <?php foreach($categories as $category): ?>
+          <li>
+            
             <a href="?category_id=<?php echo $category['category_id'];?>">
                     <?php echo $category['category_name']; ?></a>
         
-            </h5>
-
-               
+             
                 
         </li>
-        <?php endforeach; ?>
+       <?php endforeach; ?>
     </ul>
+       </div>
         </nav>
     </aside>
     <section>
-        <h1><?php echo $current_category; ?></h1>
+       
         <nav>
-            <?php print_r($products);?>
+           <div class="about-container">
             <table>
                 <tr>
                  <th>Product Image</th>
@@ -55,7 +55,7 @@
             
                          
                           
-                    
+           </div>
        
         </nav>
     </section>

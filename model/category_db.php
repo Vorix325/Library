@@ -30,5 +30,21 @@ class categoryDB
         return $category_name;
         
  } 
+ 
+ function add_category($name)
+ {
+     $db = database::getDB();
+    $query = 'INSERT INTO category
+              (category_name)
+              VALUES
+              (:name)'
+              ;
+
+        $stm = $db->prepare($query);
+        $stm->bindValue(':name', $name);
+        $stm->execute();
+        $stm->closeCursor();
+       
+ }
 
 }

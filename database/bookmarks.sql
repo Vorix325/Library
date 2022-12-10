@@ -101,9 +101,9 @@ INSERT INTO `category` (`category_name`, `category_id`) VALUES
 ('Web application books', 3);
 
 INSERT INTO `product` (`product_id`, `product_name`, `category_id`, `price`) VALUES
-(1, 'HTML&CSS', 3, NULL),
-(2, 'Hobbit', 2, NULL),
-(3, 'Lord of the Rings', 1, NULL);
+(1, 'HTML&CSS', 3, 12),
+(2, 'Hobbit', 2, 11),
+(3, 'Lord of the Rings', 1, 20);
 
 
 -- create the users

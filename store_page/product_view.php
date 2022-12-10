@@ -5,7 +5,7 @@
     <aside>
         <h1>Categories</h1>
         <nav>
-        <ul class="navigation">
+        <ul>
     <?php foreach($categories as $category): ?>
         <li>
             <h5>
@@ -22,6 +22,7 @@
         </nav>
     </aside>
     <section>
+        <div class="about-container">
         <h1><?php echo $product['product_name']; ?></h1>
         <div id="left_column">
             <p>
@@ -38,6 +39,7 @@
                 <input type='hidden' name='amount' value='1'>
                  <button type="submit" class="profile-submit">Purchase</button>
             </form>
+        </div>
         </div>
     </section>
 </main>
