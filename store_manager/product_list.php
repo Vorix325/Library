@@ -70,7 +70,7 @@
         
         
         <a href="index.php?action=test">Add Product</a>
-        <a href="index.php?action=addCategory">Add Product</a>
+        <a href="index.php?action=showCat">Add Category</a>
 
 
         

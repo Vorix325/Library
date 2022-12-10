@@ -88,6 +88,9 @@ switch($action)
         include('../store_manager/update.php');
     }
     break;
+    case 'showCat':
+        include '../store_manager/addCategory.php';
+        break;
     case 'addCategory':
     $name = filter_input(INPUT_POST, 'name');
     $categoryDB->add_category($name);
